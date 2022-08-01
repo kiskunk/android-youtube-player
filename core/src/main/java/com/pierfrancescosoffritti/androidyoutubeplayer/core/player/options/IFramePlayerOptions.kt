@@ -114,6 +114,15 @@ class IFramePlayerOptions private constructor(private val playerOptions: JSONObj
             addString(ORIGIN, origin)
             return this
         }
+        
+        /**
+         * Controls whether the web-based UI of the IFrame player should show Fullscreen button.
+         * @param controls If set to 0: web UI fullscreen button is hidden. If set to 1: button is shown.
+         */
+        fun fullScreenButton(visible: Int): Builder {
+            addInt(FS, visible)
+            return this
+        }
 
         private fun addString(key: String, value: String) {
             try {
